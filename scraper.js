@@ -1,12 +1,14 @@
 let Crawler = require("crawler");
 
 let scrape = (uri, onDone, size=800) => {
-    let artOfSize = (src, size) => {
-        let segs = src.split("/");
+    let popLast = (str, separator) => {
+        let segs = str.split(separator);
         segs.pop();
-        let result = `${segs.join("/")}/${size.toString()}x0w.jpg`;
-        return result;
+        return segs.join(separator);
     };
+
+    let artOfSize = (src, size) =>
+        `${popLast(src, "/")}/${size.toString()}x0w.jpg`;
 
     let c = new Crawler({
         callback : function (error, res, done) {
@@ -17,7 +19,8 @@ let scrape = (uri, onDone, size=800) => {
             } else {
                 let $ = res.$;
                 art = $(".product-hero img").attr("src");
-                onDone(artOfSize(art, size));
+                title = $(".product-header__title").text()
+                onDone(artOfSize(art, size), title);
                 done();
             }
         }
