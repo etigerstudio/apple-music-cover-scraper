@@ -2,6 +2,7 @@ const Scraper = require("./scraper");
 const program = require("commander");
 const https = require('https');
 const fs = require('fs');
+const ora = require("ora");
 
 const version = "0.1.0";
 let url, name;
@@ -34,6 +35,10 @@ if (!url) {
     process.exit(1);
 }
 
+// --- Init Spinner ---
+
+const scraping = ora("Scraping album art url...");
+const downloading = ora("Downloading cover...");
 
 // --- Perform Scraping ---
 
@@ -51,10 +56,17 @@ let download = function(url, dest, cb) {
     });
 };
 
+scraping.start();
 Scraper.scrape(url, (art, title) => {
+    scraping.succeed("Scraped album art url...");
+    downloading.start();
+
     // TODO: slugify title
-    download(art, name ? name : `${title}.jpg`, error => {
+    const dest = name ? name : `${title}.jpg`;
+    download(art, dest, error => {
     if (error) {
         console.log(error)
+    } else {
+        downloading.succeed(`Cover saved to ${dest}.`);
     }})
 });
