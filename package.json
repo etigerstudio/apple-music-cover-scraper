@@ -1,6 +1,6 @@
 {
   "name": "apple-musics-scraper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A command line tool to scrape album art from apple music preview page.",
   "bin": {
     "am_scraper": "./am_scraper.js"
