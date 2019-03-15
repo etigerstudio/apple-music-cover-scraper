@@ -18,7 +18,7 @@ program.version(version, "-v, --version")
     .option("-s, --size <size>", "specify the size(width) of the art")
     .usage(`<url> [file name]
   <url>: required, url to the apple music preview web page
-  [file name]: optional, file name to save to, default: album title`)
+  [file name]: optional, file name to save as, default: album title`)
     .action((_url, _name) => {
         url = _url;
         name = _name;
@@ -73,6 +73,6 @@ Scraper.scrape(url, size, (art, title) => {
     if (error) {
         console.log(error)
     } else {
-        downloading.succeed(`Cover saved to ${dest}.`);
+        downloading.succeed(`Cover saved as ${dest}.`);
     }})
 });
