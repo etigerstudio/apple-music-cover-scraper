@@ -1,0 +1,28 @@
+{
+  "name": "apple-musics-scraper",
+  "version": "0.1.0",
+  "description": "A command line tool to scrape album art out of apple music preview page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etigerstudio/apple-music-album-art-scraper.git"
+  },
+  "keywords": [
+    "albumart",
+    "artwork",
+    "music",
+    "applemusic"
+  ],
+  "author": "E-Tiger Studio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/etigerstudio/apple-music-album-art-scraper/issues"
+  },
+  "homepage": "https://github.com/etigerstudio/apple-music-album-art-scraper#readme",
+  "dependencies": {
+    "crawler": "^1.2.0"
+  }
+}
