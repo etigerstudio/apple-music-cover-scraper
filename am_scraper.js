@@ -5,6 +5,7 @@ const fs = require('fs');
 const ora = require("ora");
 
 const version = "0.1.0";
+let size = 800;
 let url, name;
 
 // --- Command Config ---
@@ -12,7 +13,7 @@ let url, name;
 program.version(version, "-v, --version")
     .description("A command line tool to scrape album art from apple music preview page")
     .arguments("<url> [name]")
-    .option("-s, --size", "specify the size(width) of the art")
+    .option("-s, --size <size>", "specify the size(width) of the art")
     .usage(`<url> [file name]
   <url>: required, url to the apple music preview web page
   [file name]: optional, file name to save to, default: album title`)
@@ -33,6 +34,9 @@ program.parse(process.argv);
 if (!url) {
     program.outputHelp();
     process.exit(1);
+}
+if (program.size) {
+    size = program.size;
 }
 
 // --- Init Spinner ---
@@ -57,7 +61,7 @@ let download = function(url, dest, cb) {
 };
 
 scraping.start();
-Scraper.scrape(url, (art, title) => {
+Scraper.scrape(url, size, (art, title) => {
     scraping.succeed("Scraped album art url...");
     downloading.start();
 

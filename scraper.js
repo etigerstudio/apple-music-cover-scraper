@@ -1,6 +1,6 @@
 let Crawler = require("crawler");
 
-let scrape = (uri, onDone, size=800) => {
+let scrape = (uri, size, onDone) => {
     let popLast = (str, separator) => {
         let segs = str.split(separator);
         segs.pop();
