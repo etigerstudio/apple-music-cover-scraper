@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const Scraper = require("./scraper");
 const program = require("commander");
 const https = require('https');
