@@ -11,7 +11,7 @@ let url, name;
 // --- Command Config ---
 
 program.version(version, "-v, --version")
-    .description("A command line tool to scrape album art from apple music preview page")
+    .description("A command line tool to scrape album cover from apple music preview page")
     .arguments("<url> [name]")
     .option("-s, --size <size>", "specify the size(width) of the art")
     .usage(`<url> [file name]
@@ -41,7 +41,7 @@ if (program.size) {
 
 // --- Init Spinner ---
 
-const scraping = ora("Scraping album art url...");
+const scraping = ora("Scraping cover url...");
 const downloading = ora("Downloading cover...");
 
 // --- Perform Scraping ---
@@ -62,7 +62,7 @@ let download = function(url, dest, cb) {
 
 scraping.start();
 Scraper.scrape(url, size, (art, title) => {
-    scraping.succeed("Scraped album art url...");
+    scraping.succeed("Scraped cover url...");
     downloading.start();
 
     // TODO: slugify title
