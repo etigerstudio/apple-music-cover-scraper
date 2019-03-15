@@ -11,10 +11,10 @@ let scrape = (uri, onDone, size=800) => {
     let c = new Crawler({
         callback : function (error, res, done) {
             let art;
-            if(error){
+            if (error) {
                 console.log(error);
                 done();
-            }else{
+            } else {
                 let $ = res.$;
                 art = $(".product-hero img").attr("src");
                 onDone(artOfSize(art, size));
