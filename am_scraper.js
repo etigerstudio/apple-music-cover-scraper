@@ -15,7 +15,7 @@ let url, name;
 program.version(version, "-v, --version")
     .description("A command line tool to scrape album cover from apple music preview page")
     .arguments("<url> [name]")
-    .option("-s, --size <size>", "specify the size(width) of the art")
+    .option("-s, --size <size>", "specify the size(width in pixel) of the cover")
     .usage(`<url> [file name]
   <url>: required, url to the apple music preview web page
   [file name]: optional, file name to save as, default: album title`)
@@ -27,7 +27,7 @@ program.version(version, "-v, --version")
         console.log("");
         console.log("Examples:");
         console.log("  $ am_scraper https://itunes.apple.com/cn/album/flux-single/1453562770");
-        console.log("  $ am_scraper https://itunes.apple.com/us/album/flux-single/1453562770 cover.jpg");
+        console.log("  $ am_scraper -s 1024 https://itunes.apple.com/us/album/flux-single/1453562770 cover.jpg");
     });
 program.parse(process.argv);
 
