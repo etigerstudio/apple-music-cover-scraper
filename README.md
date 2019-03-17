@@ -1,8 +1,8 @@
-#  Music Cover Scraper
+#  Music Cover Scraper [![npm version](https://badge.fury.io/js/apple-music-cover-scraper.svg)](https://badge.fury.io/js/apple-music-cover-scraper)
 
-<img src="https://raw.githubusercontent.com/etigerstudio/apple-music-cover-scraper/master/hero.png" alt="apple-music-cover-scraper hero image" title="apple-music-cover-scraper hero image" align="center" width="702" height="299" />
-
-[![npm version](https://badge.fury.io/js/apple-music-cover-scraper.svg)](https://badge.fury.io/js/apple-music-cover-scraper)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/etigerstudio/apple-music-cover-scraper/master/hero.png" alt="apple-music-cover-scraper hero image" title="apple-music-cover-scraper hero image" width="702" />
+</p>
 
 Ever been frustrated by low-resolution, over-compressed, distorted album cover of your favorite track in your music library? Obtain comparatively clear, briliant, original cover image from Apple Music catalog preview page using this scraper.
 
