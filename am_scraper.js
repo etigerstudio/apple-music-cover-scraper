@@ -6,7 +6,7 @@ const https = require('https');
 const fs = require('fs');
 const ora = require("ora");
 
-const version = "0.1.0";
+const version = "1.0.0";
 let size = 800;
 let url, name;
 

@@ -1,6 +1,6 @@
 {
   "name": "apple-music-cover-scraper",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "A command line tool to scrape cover from apple music preview page.",
   "bin": {
     "am_scraper": "./am_scraper.js"
