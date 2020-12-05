@@ -48,7 +48,7 @@ $ am_scraper -s 1024 https://itunes.apple.com/us/album/flux-single/1453562770 co
 
 ## Notes
 
-Preview pages of certain Apple Music server may not be accessible in certain coutries. For example, preview pages of US server is not available in mainland China.
+Preview pages of certain Apple Music servers may not be accessible in certain countries or regions. For example, preview pages of US server is not available in mainland China.
 
 ## Disclaimer
 
